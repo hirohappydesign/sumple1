@@ -1,99 +1,342 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="手作りの心を込めたプレゼント">
-    <meta name="keywords" content="クッキー,手作り,プレゼント">
-    <title>ちいさなちいさなおかしやさん　｜　手作りの心を込めたプレゼント</title>
+@charset "utf-8";
 
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
-</head>
-<body>
+/* ========================================
+    リセットcss
+========================================= */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  overflow-y: scroll;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+a:focus {
+  outline: none;
+}
 
-    <!-- #wrapper ここから -->
- <div id="wrapper">
+/* ========================================
+	フロートの解除
+========================================= */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ========================================
+	全体設計
+========================================= */
+body {
+  color: #555;
+  font-size: 14px;
+  line-height: 1;
+  font-family: "メイリオ", Meiryo;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+	ラッパー
+========================================= */
+div#wrapper{
+  width:  960px;
+  height: auto;
+  margin: 0 auto;
+}
+/* ========================================
+	ヘッダー
+========================================= */
+header{
+  width: 960px;
+  height: 99px;
+}
+
+header h1{
+  width: 213px;
+  height: 39px;
+  margin-top: 30px;
+  float: left;
+}
+
+nav{
+  float: right;
+  margin-top: 56px;
+}
+
+nav ul li {
+  float: left;
+  margin-left: 20px;
+}
+nav ul li a {
+  color: #40313c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ========================================
+	メイン画像
+========================================= */
+div#mainimage{
+  width: 960px;
+  height: 300px;
+
+  margin-bottom: 30px;
+}
+
+
+/* ========================================
+	レフト
+========================================= */
+div#left{
+  width: 280px;
+  height: auto;
+  float: left;
+  margin-right: 30px;
+}
+
+div#left ul li{
+  width: 278px;
+  height: 48px;
+  background-color: #bfb093;
+  margin-bottom: 10px;
+  
+}
+div#left ul li a{
+  font-size: 16px;
+  font-weight: bold;
+  color: #40313c;
+  text-decoration: none;
+  line-height: 50px;
+
+  padding-left: 50px;
+  display: block;
+}
+a#icon_tel{
+  background: url(images/cake.png)no-repeat 14px center;
+}
+a#icon_blog{
+  background: url(images/shake.png)no-repeat 14px center;
+}
+a#icon_voice{
+  background: url(images/donguri.png)no-repeat 14px center;
+}
+/* ========================================
+	ライト
+========================================= */
+div#right{
+  width: 650px;
+  height: auto;
+  float: left;
+}
+  div#right h2{
+    font-size: 18px;
+    font-weight: bold;
+    color: #40313c;
+    margin-bottom: 15px;
+  }
 
 
 
-<!-- header ここから -->
-    <header>
-        <h1><img src="images/risu_03.png" alt="
-            ちいさなちいさなおかしやさん手作りの心を込めたプレゼント"></h1>
+div#right dt{
+  font-size: 12px;
+  color: #40313c;
+  float: left;
+  width: 79px;
+  line-height: 40px;
+  padding-left: 15px;
+}
 
-        <nav>
-            <ul>
-                <li><a href="#">最新情報</a></li>
-                <li><a href="#">商品一覧</a></li>
-                <li><a href="#">会社情報</a></li>
-                <li><a href="#">アクセス</a></li>
-                <div class="clearfix"></div>
-            </ul>
-        </nav>
-        <div class="clearfix"></div>
-    </header>
-    <!-- header ここまで -->
+div#right dd{
+  font-size: 13px;
+  color: #40313c;
+  float: left;
+  width: 556px;
+  line-height: 40px;
 
-<!-- mainimage ここから -->
-    <div id="mainimage">
-        <img src="images/main.jpg" alt="mein画像">
-    </div>
-    <!-- mainimage ここまで -->
+  
+}
 
-<!-- left　ここから　　 -->
-   <div id="left">
-    <ul>
-        <li><a id="icon_tel" href="#">ご注文・お問い合わせ</a></li>
-        <li><a id="icon_blog" href="#">お店のこだわり</a></li>
-        <li><a id="icon_voice" href="#">お客様の声</a></li>
-   </div>
-   <!-- left　ここまで -->
+div#right dt:nth-of-type(odd),div#right dd:nth-of-type(odd){
+  background-color: #bf8e8e;
+}
+div.clearfix{
 
-<!-- right　ここから -->
-    <div id="right">
-        <h2>お知らせ</h2>
-        <dl>
-            <dt>2023.11.11</dt>
-            <dd>クリスマスケーキのご予約を受け付け開始いたしました</dd>
-            <dt>2023.11.11</dt>
-            <dd>12月・1月の定休日のおしらせ</dd>
-            <dt>2023.11.11</dt>
-            <dd>文化祭に出店いたします</dd>
-            <dt>2023.11.11</dt>
-            <dd>秋の新商品のご紹介</dd>
-            <dt>2023.11.11</dt>
-            <dd>ホームページをリニューアルしました</dd>
-            <div class="clearfix"></div>
-        </dl>
-    </div>
-<!--right　ここまで -->
+  clear: both;
+}
 
-<div class="clearfix"></div>
-
- </div>
-  <!-- #wrapper ここまで -->
-
- <footer>
-    <div class="footer_innner">
-    <p id="pagetop">
-        <a href="#">PAGETOP</a>
-    </p>
-    <p id="footer_logo">
-        <img src="images/risu_footer_19.png" alt="まごころと優しさを大切に　ネストクリニック">
-    </p>
-    <ul>
-        <li><a href="#">最新情報</a></li>
-        <li><a href="#">商品一覧</a></li>
-        <li><a href="#">会社情報</a></li>
-        <li><a href="#">アクセス</a></li>
-        <div class="clearfix"></div>
-    </ul>
-
-    <div class="clearfix"></div>
-
-    </div>
-    
- </footer>
-
-</body>
-
-</html>
+/* ========================================
+	フッター
+========================================= */
+footer{
+  width: 100%;
+  height: auto;
+  background-color: #c7cfd9;
+  margin-top: 50px;
+}
+div.footer_innner{
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+  
+}
+p#pagetop a{
+  width: 78px;
+  height: 20px;
+  background-color: #c7cfd9;
+  text-align: center;
+  color: #40313c;
+  display: block;
+  text-decoration: none;
+  line-height: 20px;
+  position: absolute;
+  top:-20px;
+  right: 0;
+}
+p#footer_logo{
+  float: left;
+}
+footer ul{
+  float: right;
+}
+footer ul li{
+  float: left;
+  margin-left: 20px;
+}
+footer ul li a{
+  color: #40313c;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
